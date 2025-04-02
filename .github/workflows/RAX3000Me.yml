@@ -40,7 +40,7 @@ jobs:
       uses: actions/checkout@main
       
 
-     - name: 初始化编译环境
+    - name: 初始化编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
