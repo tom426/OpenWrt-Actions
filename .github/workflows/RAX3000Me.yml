@@ -48,7 +48,7 @@ jobs:
       run: |
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo apt update
-        sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.org/init_build_environment.sh)'
+        sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.eu.org/init_build_environment.sh)'
         sudo apt autoremove --purge
         sudo apt clean
         sudo timedatectl set-timezone "$TZ"
@@ -125,13 +125,16 @@ jobs:
         mv $GITHUB_WORKSPACE/openwrt/bin/packages/*/* packages
         tar -czf packages.tar.gz packages
         rm -rf packages
-        mv *sysupgrade.itb RAX3000Me-250326-squashfs-sysupgrade.itb
         rm -rf version.buildinfo
         rm -rf profiles.json
+        rm -rf *rootfs*
+        rm -rf *kernel*
+        rm -rf *.manifest
         rm -rf feeds.buildinfo
         rm -rf sha256sums
-        rm -rf *bl2.bin
-        rm -rf immortalwrt*
+        rm -rf *toolchain*
+        mv *sysupgrade.bin RAX3000Me-${{ env.FIRMWARE_VERSION }}-sysupgrade.bin || echo 没有找到 *sysupgrade.bin 文件
+        mv *factory.bin RAX3000Me-${{ env.FIRMWARE_VERSION }}-factory.bin || echo 没有找到 *factory.bin 文件
         echo -e "$(sha256sum *)\n" > sha256sums
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
