@@ -10,9 +10,9 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 # Modify default IP
-sed -i "s/192.168.1.1/192.168.5.1/g" package/base-files/files/bin/config_generate
+sed -i "s/192.168.1.1/192.168.6.1/g" package/base-files/files/bin/config_generate
 sed -i "s/hostname='ImmortalWrt'/hostname='RAX3000Me'/g" package/base-files/files/bin/config_generate
-sed -i "s/DISTRIB_DESCRIPTION=.*/DISTRIB_DESCRIPTION='QiYueYi $(date +"%y%m%d")'/g" package/base-files/files/etc/openwrt_release
+sed -i "s/DISTRIB_DESCRIPTION=.*/DISTRIB_DESCRIPTION='SanShu888 $(date +"%y%m%d")'/g" package/base-files/files/etc/openwrt_release
 
-wget -O llvm-bpf.tar.zst https://downloads.immortalwrt.org/releases/24.10-SNAPSHOT/targets/mediatek/filogic/llvm-bpf-18.1.7.Linux-x86_64.tar.zst
-tar -xvaf llvm-bpf.tar.zst
+#wget -O llvm-bpf.tar.zst https://downloads.immortalwrt.org/releases/24.10-SNAPSHOT/targets/mediatek/filogic/llvm-bpf-18.1.7.Linux-x86_64.tar.zst
+#tar -xvaf llvm-bpf.tar.zst
