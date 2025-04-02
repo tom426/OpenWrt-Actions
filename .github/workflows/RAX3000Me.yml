@@ -21,9 +21,8 @@ on:
     - cron: '0 0 1 * *'
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt.git
-  REPO_BRANCH: openwrt-24.10
-  TOOLCHAIN_URL: https://downloads.immortalwrt.org/releases/24.10-SNAPSHOT/targets/mediatek/filogic/immortalwrt-toolchain-24.10-SNAPSHOT-mediatek-filogic_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x.git
+  REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: RAX3000Me/feeds.conf.default
   CONFIG_FILE: RAX3000Me/.config
   DIY_P1_SH: RAX3000Me/diy1.sh
